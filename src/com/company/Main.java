@@ -15,7 +15,7 @@ public class Main {
         System.out.println("The start position of player is : " + playerposition);
         System.out.println();
         Random ranval = new Random();
-        while (playerposition < 100) {
+        while (playerposition != 100) {
             int diceroll = ranval.nextInt(6) + 1;
             int check_play = ranval.nextInt(3);
             switch (check_play) {
@@ -24,7 +24,7 @@ public class Main {
                 case Ladder:
                     playerposition += diceroll;
                     if (playerposition > 100) {
-                        playerposition = 100;
+                        playerposition -= diceroll;
                     }
                     break;
                 case Snake:
